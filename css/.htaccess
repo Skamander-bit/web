@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{THE_REQUEST} /([^.]+)\.css [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.css -f
+RewriteRule ^ %{REQUEST_URI}.css [NC,L]
+
+Options -Indexes
